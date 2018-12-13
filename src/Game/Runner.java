@@ -9,11 +9,12 @@ import java.util.Scanner;
     public class Runner {
 
 
+
         private static boolean gameOn = true;
 
         public static void main(String[] args)
         {
-            Room[][] building = new Room[5][5];
+            Room[][] building = new building[5][5];
 
             //Fill the building with normal rooms
             for (int x = 0; x<building.length; x++)
@@ -27,13 +28,15 @@ import java.util.Scanner;
             //Create a random winning room.
             int x = (int)(Math.random()*building.length);
             int y = (int)(Math.random()*building.length);
-            building[x][y] = new WinningRoom(x, y);
+            building [x][y] = new WinningRoom(x, y);
 
             //Creates a fun room.
             int x = (int)(Math.random()*building.length);
             int y = (int)(Math.random()*building.length);
             building[x][y] = new FunRoom(x, y);
 
+
+            
             //Setup player 1 and the input scanner
             Person player1 = new Person("FirstName", "FamilyName", 0,0);
             building[0][0].enterRoom(player1);
