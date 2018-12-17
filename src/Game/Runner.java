@@ -15,7 +15,7 @@ import java.util.Scanner;
 
         public static void main(String[] args)
         {
-            Room[][] building = new building[5][5];
+            Room[][] building = new Room[5][5];
 
             //Fill the building with normal rooms
             for (int x = 0; x<building.length; x++)
@@ -32,9 +32,9 @@ import java.util.Scanner;
             building [x][y] = new WinningRoom(x, y);
 
             //Creates a fun room.
-            int x = (int)(Math.random()*building.length);
-            int y = (int)(Math.random()*building.length);
-            building[x][y] = new FunRoom(x, y);
+            int x1 = (int)(Math.random()*building.length);
+            int y1 = (int)(Math.random()*building.length);
+            building[x][y] = new FunRoom(x1, y1);
 
 
             
@@ -44,6 +44,8 @@ import java.util.Scanner;
             Scanner in = new Scanner(System.in);
             while(gameOn)
             {
+
+
                 System.out.println("Where would you like to move? (Choose N, S, E, W)");
                 String move = in.nextLine();
                 if(validMove(move, player1, building))
@@ -69,6 +71,9 @@ import java.util.Scanner;
          */
         public static boolean validMove(String move, Person p, Room[][] map)
         {
+
+
+
             move = move.toLowerCase().trim();
             switch (move) {
                 case "n":
